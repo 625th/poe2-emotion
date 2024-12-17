@@ -122,212 +122,144 @@
         }
 
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const numberInputs = document.querySelectorAll('.number-input');
-            const searchInput = document.querySelector('.search-input');
-            const resetButton = document.querySelector('.reset-btn');
-            const tableBody = document.querySelector('table tbody');
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const numberInputs = document.querySelectorAll('.number-input');
+        const searchInput = document.querySelector('.search-input');
+        const resetButton = document.querySelector('.reset-btn');
+        const tableBody = document.querySelector('table tbody');
 
-            // Emotion tags in ascending hierarchy
-            const emotionTags = ["Ire", "Guilt", "Greed", "Paranoia", "Envy", "Disgust", "Despair", "Fear", "Suffering", "Isolation"];
+        const emotionTags = ["Ire", "Guilt", "Greed", "Paranoia", "Envy", "Disgust", "Despair", "Fear", "Suffering", "Isolation"];
 
-            function canSatisfyEmotions(inputCounts, rowCounts) {
-                const emotionHierarchy = {
-                    "Ire": "Guilt",
-                    "Guilt": "Greed",
-                    "Greed": "Paranoia",
-                    "Paranoia": "Envy",
-                    "Envy": "Disgust",
-                    "Disgust": "Despair",
-                    "Despair": "Fear",
-                    "Fear": "Suffering",
-                    "Suffering": "Isolation"
-                };
+        // Core function to check if emotions can satisfy the row requirements
+        function canSatisfyEmotions(inputCounts, rowCounts) {
+            const emotionHierarchy = [...emotionTags];
+            const visited = new Set();
 
-                const memo = new Map(); // For memoization
-
-                // Function to check if all required emotions can be satisfied
-                function canSatisfy(currentCounts, requiredCounts) {
-                    for (let emotion in requiredCounts) {
-                        if ((currentCounts[emotion] || 0) < requiredCounts[emotion]) {
-                            return false;
-                        }
-                    }
-                    return true;
+            function isSatisfied(state) {
+                for (const emotion in rowCounts) {
+                    if ((state[emotion] || 0) < rowCounts[emotion]) return false;
                 }
+                return true;
+            }
 
-                // Recursive function with memoization
-                function tryCombinations(currentCounts, requiredCounts) {
-                    const key = JSON.stringify(currentCounts); // Unique key for memoization
+            function getStateKey(state) {
+                return emotionHierarchy.map(e => state[e] || 0).join(',');
+            }
 
-                    if (memo.has(key)) {
-                        return memo.get(key); // Return cached result
+            function explore(currentState) {
+                const stateKey = getStateKey(currentState);
+                if (visited.has(stateKey)) return false;
+                visited.add(stateKey);
+
+                if (isSatisfied(currentState)) return true;
+
+                for (let i = 0; i < emotionHierarchy.length - 1; i++) {
+                    const curr = emotionHierarchy[i];
+                    const next = emotionHierarchy[i + 1];
+
+                    if ((currentState[next] || 0) >= 3) continue; // Skip if max 3 of the next emotion is already satisfied
+
+                    if ((currentState[curr] || 0) >= 3) {
+                        const newState = { ...currentState };
+                        newState[curr] -= 3;
+                        newState[next] = (newState[next] || 0) + 1;
+
+                        if (explore(newState)) return true;
                     }
-
-                    if (canSatisfy(currentCounts, requiredCounts)) {
-                        memo.set(key, true);
-                        return true; // Base case: satisfied
-                    }
-
-                    for (let emotion in currentCounts) {
-                        const count = currentCounts[emotion];
-                        const nextEmotion = emotionHierarchy[emotion];
-
-                        // Only transform if there are enough emotions and a next tier exists
-                        if (count >= 3 && nextEmotion) {
-                            const sets = Math.floor(count / 3);
-
-                            const newCounts = { ...currentCounts };
-                            newCounts[emotion] -= sets * 3;
-                            newCounts[nextEmotion] = (newCounts[nextEmotion] || 0) + sets;
-
-                            if (tryCombinations(newCounts, requiredCounts)) {
-                                memo.set(key, true);
-                                return true;
-                            }
-                        }
-                    }
-
-                    memo.set(key, false);
-                    return false; // No combination satisfied
                 }
-
-                return tryCombinations(inputCounts, rowCounts);
-            }
-            function debounce(func, delay) {
-                let timer;
-                return function (...args) {
-                    clearTimeout(timer);
-                    timer = setTimeout(() => func.apply(this, args), delay);
-                };
+                return false;
             }
 
-            // Attach debounced event listeners
-            numberInputs.forEach(input => input.addEventListener('input', debounce(filterTableRows, 200)));
-            searchInput.addEventListener('input', debounce(filterTableRows, 200));
+            return explore(inputCounts);
+        }
 
-            // Filter table rows based on input values
-            function filterTableRowsByEmotions() {
-                const inputCounts = {};
+        // Combined filtering logic: filter rows based on emotions AND search input
+        function filterTableRows() {
+            const inputCounts = {};
+            let allInputsZero = true;
 
-                // Collect values from input fields
-                numberInputs.forEach((input, index) => {
-                    const emotion = emotionTags[index]; // "Ire", "Guilt", etc.
-                    inputCounts[emotion] = parseInt(input.value) || 0;
-                });
-
-                // Go through each table row
-                const rows = tableBody.querySelectorAll('tr');
-                rows.forEach(row => {
-                    const rowCounts = {};
-                    const emotionImages = row.querySelectorAll('.emotion-img');
-
-                    // Count emotions in the row
-                    emotionImages.forEach(img => {
-                        const emotion = img.alt;
-                        rowCounts[emotion] = (rowCounts[emotion] || 0) + 1;
-                    });
-
-                    // Check if the row can be satisfied
-                    const isRowVisible = canSatisfyEmotions(inputCounts, rowCounts);
-                    row.style.display = isRowVisible ? '' : 'none';
-                });
-            }
-            // Reset button functionality
-            resetButton.addEventListener('click', function () {
-                // Reset all number inputs to 0
-                numberInputs.forEach(input => {
-                    input.value = 0;
-                });
-
-                // Clear the search input
-                searchInput.value = '';
-
-                // Re-run filtering to reset the table view
-                filterTableRows();
+            // Get counts from emotion inputs
+            numberInputs.forEach((input, index) => {
+                const emotion = emotionTags[index];
+                const value = parseInt(input.value) || 0;
+                inputCounts[emotion] = value;
+                if (value > 0) allInputsZero = false;
             });
 
-            // Function to filter table rows by emotions AND search text
-            function filterTableRows() {
-                const inputCounts = {};
-                let allInputsZero = true;
+            const searchQuery = searchInput.value.toLowerCase();
 
-                // Collect values from input fields
-                numberInputs.forEach((input, index) => {
-                    const emotion = emotionTags[index]; // "Ire", "Guilt", etc.
-                    const value = parseInt(input.value) || 0;
-                    inputCounts[emotion] = value;
-
-                    if (value > 0) allInputsZero = false; // Check if any input is non-zero
+            tableBody.querySelectorAll('tr').forEach(row => {
+                const rowCounts = {};
+                row.querySelectorAll('.emotion-img').forEach(img => {
+                    const emotion = img.alt;
+                    rowCounts[emotion] = (rowCounts[emotion] || 0) + 1;
                 });
 
-                const searchQuery = searchInput.value.toLowerCase(); // Get search query
+                const rowName = row.cells[0].textContent.toLowerCase();
+                const rowDescription = row.cells[1].textContent.toLowerCase();
+                const matchesSearch = rowName.includes(searchQuery) || rowDescription.includes(searchQuery);
+                const matchesEmotions = allInputsZero || canSatisfyEmotions(inputCounts, rowCounts);
 
-                // Go through each table row
-                const rows = tableBody.querySelectorAll('tr');
-                rows.forEach(row => {
-                    const rowCounts = {};
-                    const emotionImages = row.querySelectorAll('.emotion-img');
+                // Show row only if BOTH search and emotion conditions are satisfied
+                row.style.display = matchesSearch && matchesEmotions ? '' : 'none';
+            });
+        }
 
-                    // Count emotions in the row
-                    emotionImages.forEach(img => {
-                        const emotion = img.alt;
-                        rowCounts[emotion] = (rowCounts[emotion] || 0) + 1;
-                    });
+        // Function to reset the table and inputs
+        function resetTable() {
+            numberInputs.forEach(input => input.value = 0);
+            searchInput.value = '';
+            tableBody.innerHTML = '';
 
-                    // Check if row matches emotions (only if inputs are not all zero)
-                    const matchesEmotions = allInputsZero || canSatisfyEmotions(inputCounts, rowCounts);
-
-                    // Check if row matches search query
-                    const nameCell = row.cells[0].textContent.toLowerCase();
-                    const descriptionCell = row.cells[1].textContent.toLowerCase();
-                    const matchesSearch = nameCell.includes(searchQuery) || descriptionCell.includes(searchQuery);
-
-                    // Show the row only if it matches BOTH filters
-                    row.style.display = (matchesEmotions && matchesSearch) ? '' : 'none';
-                });
-            }
-            // Initial table population
             fetch('data.json')
                 .then(response => response.json())
                 .then(data => populateTable(data))
                 .catch(error => console.error('Error loading JSON data:', error));
+        }
 
-            function populateTable(data) {
-                for (const key in data) {
-                    if (data.hasOwnProperty(key)) {
-                        const row = document.createElement('tr');
-                        const nameCell = document.createElement('td');
-                        const valueCell = document.createElement('td');
-                        const emotionsCell = document.createElement('td');
+        // Populate table with JSON data
+        function populateTable(data) {
+            for (const key in data) {
+                if (data.hasOwnProperty(key)) {
+                    const row = document.createElement('tr');
+                    const nameCell = document.createElement('td');
+                    const valueCell = document.createElement('td');
+                    const emotionsCell = document.createElement('td');
 
-                        nameCell.textContent = key;
-                        valueCell.innerHTML = data[key].value.join('<br>');
-                        emotionsCell.innerHTML = '';
+                    nameCell.textContent = key;
+                    valueCell.innerHTML = data[key].value.join('<br>');
+                    emotionsCell.innerHTML = '';
 
-                        // Add emotion images dynamically
-                        data[key].emotions.forEach(emotion => {
-                            const img = document.createElement('img');
-                            const emotionName = emotion.replace('Distilled ', '');
-                            img.src = `img/distilled${emotionName.toLowerCase()}.webp`;
-                            img.alt = emotionName;
-                            img.classList.add('emotion-img');
-                            img.style.width = '72px';
-                            img.style.height = '72px';
-                            img.title = emotionName;
-                            emotionsCell.appendChild(img);
-                        });
+                    data[key].emotions.forEach(emotion => {
+                        const img = document.createElement('img');
+                        const emotionName = emotion.replace('Distilled ', '');
+                        img.src = `img/distilled${emotionName.toLowerCase()}.webp`;
+                        img.alt = emotionName;
+                        img.classList.add('emotion-img');
+                        img.style.width = '72px';
+                        img.style.height = '72px';
+                        img.title = emotionName;
+                        emotionsCell.appendChild(img);
+                    });
 
-                        row.appendChild(nameCell);
-                        row.appendChild(valueCell);
-                        row.appendChild(emotionsCell);
-                        tableBody.appendChild(row);
-                    }
+                    row.appendChild(nameCell);
+                    row.appendChild(valueCell);
+                    row.appendChild(emotionsCell);
+                    tableBody.appendChild(row);
                 }
             }
-        });
-    </script>
+        }
+
+        // Event Listeners
+        numberInputs.forEach(input => input.addEventListener('input', filterTableRows));
+        searchInput.addEventListener('input', filterTableRows);
+        resetButton.addEventListener('click', resetTable);
+
+        resetTable(); // Load table on page load
+    });
+</script>
+
 </head>
 <body>
     <div class="container"><div class="image-input-wrapper">
@@ -382,12 +314,13 @@
             <input type="number" class="number-input" min="0" max="999" value="0">
         </div>
     </div>    
-        <!-- Search input and reset button -->
-        <div class="search-section">
-            <input type="text" class="search-input" placeholder="Search by name or description">
-            <button class="reset-btn">Reset</button>
-        </div>
-
+    <div class="controls">
+        <input type="text" class="search-input" placeholder="Search...">
+        <button class="reset-btn" style="background-color: #444; color: white; padding: 8px 12px; border: none; cursor: pointer;">
+            Reset all
+        </button>
+    </div>
+    
         <!-- Scrollable Table -->
         <div class="table-container">
             <table>
