@@ -10,4 +10,4 @@ I'll try to keep info updated but it can be outdated.
 
 You are free to fork and make a better version!
 
-P.S. Dockerfile was used purely for local testing
+P.S. Dockerfile with nginx.conf were used purely for local testing
