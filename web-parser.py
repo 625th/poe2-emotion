@@ -5,6 +5,45 @@ import json
 
 # Disable SSL warnings to prevent cluttering output
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+def clean_json_file(file_path):
+
+    with open(file_path, "r", encoding="utf-8") as f:
+
+        data = json.load(f)
+
+    
+
+    # Recursive function to traverse and clean the data
+
+    def clean_spaces(obj):
+
+        if isinstance(obj, dict):
+
+            return {k: clean_spaces(v) for k, v in obj.items()}
+
+        elif isinstance(obj, list):
+
+            return [clean_spaces(item) for item in obj]
+
+        elif isinstance(obj, str):
+
+            return obj.replace(" %", "%")  # Remove space before '%'
+
+        return obj
+
+
+
+    cleaned_data = clean_spaces(data)
+
+
+
+    with open(file_path, "w", encoding="utf-8") as f:
+
+        json.dump(cleaned_data, f, indent=4)
+
+    
+
+    print(f"Cleaned JSON file saved to {{file_path}}")
 
 # Function to parse passive mods
 def parse_passive_value(block):
@@ -79,6 +118,8 @@ def main():
         json.dump(combined_output, f, indent=4)
 
     print("Parsing completed. Results saved to data.json")
+    
+    clean_json_file("data.json")
 
 # Run the main function
 if __name__ == "__main__":
