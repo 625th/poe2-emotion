@@ -263,15 +263,16 @@
 
         // Function to reset the table and inputs
         function resetTable() {
-            numberInputs.forEach(input => input.value = 0);
-            searchInput.value = '';
-            tableBody.innerHTML = '';
+            numberInputs.forEach(input => input.value = ""); 
+            searchInput.value = ""; 
+            tableBody.innerHTML = ""; 
 
-            fetch('data.json')
+            fetch('data.json') 
                 .then(response => response.json())
                 .then(data => populateTable(data))
                 .catch(error => console.error('Error loading JSON data:', error));
         }
+
 
         // Populate table with JSON data
         function populateTable(data) {
@@ -321,52 +322,52 @@
         <div class="input-group">
             <img src="img/distilledire.webp" alt="Ire">
             <label>Ire</label>
-            <input type="number" class="number-input" min="0" max="999" value="0">
+            <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
             <img src="img/distilledguilt.webp" alt="Guilt">
             <label>Guilt</label>
-            <input type="number" class="number-input" min="0" max="999" value="0">
+            <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
             <img src="img/distilledgreed.webp" alt="Greed">
             <label>Greed</label>
-            <input type="number" class="number-input" min="0" max="999" value="0">
+            <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
             <img src="img/distilledparanoia.webp" alt="Paranoia">
             <label>Paranoia</label>
-            <input type="number" class="number-input" min="0" max="999" value="0">
+            <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
             <img src="img/distilledenvy.webp" alt="Envy">
             <label>Envy</label>
-            <input type="number" class="number-input" min="0" max="999" value="0">
+            <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
             <img src="img/distilleddisgust.webp" alt="Disgust">
             <label>Disgust</label>
-            <input type="number" class="number-input" min="0" max="999" value="0">
+            <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
             <img src="img/distilleddespair.webp" alt="Despair">
             <label>Despair</label>
-            <input type="number" class="number-input" min="0" max="999" value="0">
+            <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
             <img src="img/distilledfear.webp" alt="Fear">
             <label>Fear</label>
-            <input type="number" class="number-input" min="0" max="999" value="0">
+            <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
             <img src="img/distilledsuffering.webp" alt="Suffering">
             <label>Suffering</label>
-            <input type="number" class="number-input" min="0" max="999" value="0">
+            <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
             <img src="img/distilledisolation.webp" alt="Isolation">
             <label>Isolation</label>
-            <input type="number" class="number-input" min="0" max="999" value="0">
+            <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
     </div>    
     <div class="controls">
