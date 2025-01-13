@@ -5,47 +5,28 @@ import json
 
 # Disable SSL warnings to prevent cluttering output
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 def clean_json_file(file_path):
-
     with open(file_path, "r", encoding="utf-8") as f:
-
         data = json.load(f)
-
     
-
     # Recursive function to traverse and clean the data
-
     def clean_spaces(obj):
-
         if isinstance(obj, dict):
-
             return {k: clean_spaces(v) for k, v in obj.items()}
-
         elif isinstance(obj, list):
-
             return [clean_spaces(item) for item in obj]
-
         elif isinstance(obj, str):
-
             return obj.replace(" %", "%")  # Remove space before '%'
-
         return obj
-
-
 
     cleaned_data = clean_spaces(data)
 
-
-
     with open(file_path, "w", encoding="utf-8") as f:
-
         json.dump(cleaned_data, f, indent=4)
-
     
+    print(f"Cleaned JSON file saved to {file_path}")
 
-    print(f"Cleaned JSON file saved to {{file_path}}")
-
-# Function to parse passive mods
 def parse_passive_value(block):
     """
     Parse a block to extract full text description, including KeywordPopups.
@@ -60,7 +41,6 @@ def parse_passive_value(block):
             description_parts.append(child.strip())
     return " ".join(filter(None, description_parts)) or None
 
-# Function to parse oils (emotions) and passive names along with their values
 def parse_oils_and_values(table_row):
     """
     Parses oils (emotions) from the first column and passive skill name with values from the second column.
@@ -95,7 +75,31 @@ def parse_oils_and_values(table_row):
         return {passive_name: {"value": value_list, "emotions": emotions_list}}
     return None
 
-# Main script execution
+def add_to_map(map_data, passive_name, value_list, emotions_list):
+    """
+    Adds a new entry to the map with a calculated weight based on the provided emotions.
+    """
+    emotion_weights = {
+        "Distilled Ire": 1,
+        "Distilled Guilt": 3,
+        "Distilled Greed": 9,
+        "Distilled Paranoia": 27,
+        "Distilled Envy": 81,
+        "Distilled Disgust": 243,
+        "Distilled Despair": 729,
+        "Distilled Fear": 2187,
+        "Distilled Suffering": 6561,
+        "Distilled Isolation": 19683
+    }
+
+    weight = sum(emotion_weights.get(emotion, 0) for emotion in emotions_list)
+
+    map_data[passive_name] = {
+        "value": value_list,
+        "emotions": emotions_list,
+        "weight": weight
+    }
+
 def main():
     url = "https://poe2db.tw/us/Distilled_Emotions#DistilledEmotionsPassives"  # Replace with the actual URL
     response = requests.get(url, verify=False)
@@ -111,16 +115,19 @@ def main():
     for row in table_rows:
         parsed_data = parse_oils_and_values(row)
         if parsed_data:
-            combined_output.update(parsed_data)
+            for passive_name, data in parsed_data.items():
+                add_to_map(combined_output, passive_name, data["value"], data["emotions"])
 
-    # Save the combined output dictionary to a single JSON file
+    # Sort the combined output by weight
+    sorted_output = dict(sorted(combined_output.items(), key=lambda item: item[1]["weight"]))
+
+    # Save the sorted output dictionary to a single JSON file
     with open("data.json", "w", encoding="utf-8") as f:
-        json.dump(combined_output, f, indent=4)
+        json.dump(sorted_output, f, indent=4)
 
     print("Parsing completed. Results saved to data.json")
     
     clean_json_file("data.json")
 
-# Run the main function
 if __name__ == "__main__":
     main()
