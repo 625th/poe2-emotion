@@ -993,8 +993,8 @@
     },
     "Roil": {
         "value": [
-            "Spell Skills have 30% increased Area of Effect",
-            "10% reduced Spell Area Damage"
+            "10% reduced Spell Area Damage",
+            "Spell Skills have 30% increased Area of Effect"
         ],
         "emotions": [
             "Distilled Disgust",
@@ -4534,8 +4534,8 @@
     },
     "Ruin": {
         "value": [
-            "Spell Skills have 10% reduced Area of Effect",
-            "35% increased Spell Area Damage"
+            "35% increased Spell Area Damage",
+            "Spell Skills have 10% reduced Area of Effect"
         ],
         "emotions": [
             "Distilled Greed",
@@ -4619,7 +4619,7 @@
     },
     "Bolstering Presence": {
         "value": [
-            "20% increased Effect of Auras from your Skills"
+            "20% increased Effect of Auras from your Aura Skills"
         ],
         "emotions": [
             "Distilled Despair",
@@ -5334,8 +5334,8 @@
     },
     "Unforgiving": {
         "value": [
-            "+4 to Maximum Rage",
-            "Inherent Rage Loss starts 1 second later"
+            "Inherent Rage Loss starts 1 second later",
+            "+4 to Maximum Rage"
         ],
         "emotions": [
             "Distilled Isolation",
@@ -5394,9 +5394,9 @@
     "One with the River": {
         "value": [
             "30% increased Defences while wielding a Staff",
+            "30% increased Freeze Buildup with Quarterstaves",
             "30% increased Stun Buildup with Quarterstaves",
-            "30% increased Daze Buildup with Quarterstaves",
-            "30% increased Freeze Buildup with Quarterstaves"
+            "30% increased Daze Buildup with Quarterstaves"
         ],
         "emotions": [
             "Distilled Guilt",

@@ -76,6 +76,59 @@
             gap: 10px;
         }
 
+        .tooltip-btn {
+            position: relative;
+            background-color: #2a2a2a;
+            color: #f5f5f5;
+            border: 1px solid #b8860b;
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            background-color: #444;
+            color: #fff;
+            padding: 4px;
+            position: absolute;
+            z-index: 1;
+            left: 110%; /* Position to the right of the button */
+            top: 0; /* Align the top of the tooltip with the top of the button */
+            transform: translateY(0); /* No vertical offset */
+            white-space: nowrap;
+        }
+
+        .tooltip-btn.active .tooltip {
+            visibility: visible;
+        }
+
+        .tooltip table {
+            border: 1px solid #b8860b; /* Dark Gold Border */
+            width: 380px;
+        }
+
+        .tooltip tr:nth-child(even) {
+            background-color: #252525; /* Alternate Row Color */
+        }
+
+        .tooltip tr:hover {
+            background-color: #3a3a3a; /* Hover Effect */
+        }
+
+        .tooltip table td {
+            border: 1px solid #8b6914; /* Darker Gold Border */
+            padding: 5px;
+            white-space: pre-wrap;
+            text-align: left;
+        }
+
+        .tooltip img {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+        }
+
         .search-input {
             width: 40%;
             padding: 6px;
@@ -115,40 +168,40 @@
             border-radius: 4px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .main-table {
+        width: 100%;
+        border-collapse: collapse;
         }
 
-        th, td {
+        .main-table th, .main-table td {
             border: 1px solid #8b6914; /* Darker Gold Border */
             padding: 8px;
             text-align: left;
             color: #f0e6d6; /* Off-white Text */
         }
 
-        th {
+        .main-table th {
             background-color: #333333; /* Darker Grey for Headers */
             font-weight: bold;
             color: #e0c766; /* Lighter Gold for Text */
         }
 
-        tr:nth-child(even) {
+        .main-table tr:nth-child(even) {
             background-color: #252525; /* Alternate Row Color */
         }
 
-        tr:hover {
+        .main-table tr:hover {
             background-color: #3a3a3a; /* Hover Effect */
         }
 
-        th:nth-child(3), td:nth-child(3) {
+        .main-table th:nth-child(3), .main-table td:nth-child(3) {
             width: 180px; 
             white-space: nowrap;
             overflow: hidden; 
             text-overflow: ellipsis; 
         }
 
-        td:nth-child(3) img {
+        .main-table td:nth-child(3) img {
             width: 40px;
             height: 40px;
             object-fit: contain;
@@ -182,7 +235,7 @@
         const numberInputs = document.querySelectorAll('.number-input');
         const searchInput = document.querySelector('.search-input');
         const resetButton = document.querySelector('.reset-btn');
-        const tableBody = document.querySelector('table tbody');
+        const tableBody = document.querySelector('.main-table tbody'); // Scoped to main-table
 
         const emotionTags = ["Ire", "Guilt", "Greed", "Paranoia", "Envy", "Disgust", "Despair", "Fear", "Suffering", "Isolation"];
 
@@ -263,16 +316,15 @@
 
         // Function to reset the table and inputs
         function resetTable() {
-            numberInputs.forEach(input => input.value = ""); 
-            searchInput.value = ""; 
-            tableBody.innerHTML = ""; 
+            numberInputs.forEach(input => input.value = "");
+            searchInput.value = "";
+            tableBody.innerHTML = "";
 
-            fetch('data.json') 
+            fetch('data.json')
                 .then(response => response.json())
                 .then(data => populateTable(data))
                 .catch(error => console.error('Error loading JSON data:', error));
         }
-
 
         // Populate table with JSON data
         function populateTable(data) {
@@ -313,6 +365,22 @@
         resetButton.addEventListener('click', resetTable);
 
         resetTable(); // Load table on page load
+    });
+
+    // JavaScript to toggle the tooltip on click
+    document.addEventListener('DOMContentLoaded', function () {
+        const tooltipBtn = document.querySelector('.tooltip-btn');
+
+        tooltipBtn.addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+
+        // Optional: Close the tooltip if clicking outside of it
+        document.addEventListener('click', function (event) {
+            if (!tooltipBtn.contains(event.target)) {
+                tooltipBtn.classList.remove('active');
+            }
+        });
     });
 </script>
 
@@ -371,15 +439,70 @@
         </div>
     </div>    
     <div class="controls">
+        <button class="tooltip-btn">Waystones
+            <span class="tooltip">
+                <table>
+                    <tr>
+                        <td><img src="img/distilledire.webp" alt="Ire"></td>
+                        <td>20% increased Magic Monsters
+Players in Area are 7% Delirious</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/distilledguilt.webp" alt="Guilt"></td>
+                        <td>8% increased Pack size
+Players in Area are 9% Delirious</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/distilledgreed.webp" alt="Greed"></td>
+                        <td>8% increased Rarity of Items found in this Area
+Players in Area are 10% Delirious</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/distilledparanoia.webp" alt="Paranoia"></td>
+                        <td>15% increased number of Rare Monsters
+Players in Area are 12% Delirious</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/distilledenvy.webp" alt="Envy"></td>
+                        <td>30% increased Waystones found in Area
+Players in Area are 15% Delirious</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/distilleddisgust.webp" alt="Disgust"></td>
+                        <td>30% increased Precursor Tablets found in Area
+Players in Area are 18% Delirious</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/distilleddespair.webp" alt="Despair"></td>
+                        <td>30% increased Stack size of Simulacrum Splinters found in Area
+Players in Area are 20% Delirious</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/distilledfear.webp" alt="Fear"></td>
+                        <td>Rare Monsters have a 25% chance to have an additional Modifier
+Players in Area are 22% Delirious</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/distilledsuffering.webp" alt="Suffering"></td>
+                        <td>Unique Monsters have 1 additional Modifier
+Players in Area are 25% Delirious</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/distilledisolation.webp" alt="Isolation"></td>
+                        <td>Players in Area are 50% Delirious</td>
+                    </tr>
+                </table>
+            </span>
+        </button>
         <input type="text" class="search-input" placeholder="Search...">
-        <button class="reset-btn" style="background-color: #444; color: white; padding: 8px 12px; border: none; cursor: pointer;">
+        <button class="reset-btn">
             Reset all
         </button>
     </div>
     
         <!-- Scrollable Table -->
         <div class="table-container">
-            <table>
+            <table class="main-table">
                 <thead>
                     <tr>
                         <th>Name</th>
