@@ -33,17 +33,6 @@
         ],
         "weight": 7
     },
-    "Open Mind": {
-        "value": [
-            "25% increased Mana Regeneration Rate"
-        ],
-        "emotions": [
-            "Distilled Guilt",
-            "Distilled Guilt",
-            "Distilled Ire"
-        ],
-        "weight": 7
-    },
     "Defensive Reflexes": {
         "value": [
             "12% increased Block chance",
@@ -68,6 +57,17 @@
         ],
         "weight": 11
     },
+    "Consistent Intake": {
+        "value": [
+            "Cannot be Critically Hit while Parrying"
+        ],
+        "emotions": [
+            "Distilled Guilt",
+            "Distilled Greed",
+            "Distilled Ire"
+        ],
+        "weight": 13
+    },
     "Back in Action": {
         "value": [
             "80% increased Stun Recovery"
@@ -79,58 +79,10 @@
         ],
         "weight": 13
     },
-    "Combat Alchemy": {
-        "value": [
-            "10% chance for Flasks you use to not consume Charges",
-            "20% increased Life and Mana Recovery from Flasks"
-        ],
-        "emotions": [
-            "Distilled Guilt",
-            "Distilled Greed",
-            "Distilled Ire"
-        ],
-        "weight": 13
-    },
-    "Eagle Eye": {
-        "value": [
-            "+30 to Accuracy Rating",
-            "10% increased Accuracy Rating"
-        ],
-        "emotions": [
-            "Distilled Ire",
-            "Distilled Greed",
-            "Distilled Guilt"
-        ],
-        "weight": 13
-    },
-    "Volatile Catalyst": {
-        "value": [
-            "10% increased Area of Effect",
-            "10% increased Cooldown Recovery Rate"
-        ],
-        "emotions": [
-            "Distilled Greed",
-            "Distilled Guilt",
-            "Distilled Ire"
-        ],
-        "weight": 13
-    },
-    "Hard to Kill": {
-        "value": [
-            "40% increased Flask Life Recovery rate",
-            "Regenerate 0.75% of Life per second"
-        ],
-        "emotions": [
-            "Distilled Guilt",
-            "Distilled Greed",
-            "Distilled Guilt"
-        ],
-        "weight": 15
-    },
     "Backup Plan": {
         "value": [
-            "40% increased Evasion Rating if you have been Hit Recently",
-            "40% increased Armour if you haven't been Hit Recently"
+            "50% increased Evasion Rating if you have been Hit Recently",
+            "50% increased Armour if you haven't been Hit Recently"
         ],
         "emotions": [
             "Distilled Greed",
@@ -153,7 +105,7 @@
     "Flashy Deflection": {
         "value": [
             "12% increased Block chance",
-            "40% increased Defences from Equipped Shield"
+            "20% increased Parried Debuff Duration"
         ],
         "emotions": [
             "Distilled Greed",
@@ -175,9 +127,9 @@
         ],
         "weight": 21
     },
-    "Life from Death": {
+    "Incision": {
         "value": [
-            "Recover 3% of Life on Kill"
+            "50% increased effect of Incision"
         ],
         "emotions": [
             "Distilled Greed",
@@ -196,18 +148,6 @@
             "Distilled Ire"
         ],
         "weight": 29
-    },
-    "Catlike Agility": {
-        "value": [
-            "25% increased Evasion Rating",
-            "25% increased Evasion Rating if you've Dodge Rolled Recently"
-        ],
-        "emotions": [
-            "Distilled Paranoia",
-            "Distilled Guilt",
-            "Distilled Ire"
-        ],
-        "weight": 31
     },
     "Strong Chin": {
         "value": [
@@ -280,7 +220,7 @@
     },
     "Mass Rejuvenation": {
         "value": [
-            "Regenerate 0.5% of Life per second",
+            "Regenerate 0.5% of maximum Life per second",
             "Allies in your Presence Regenerate 1% of your Maximum Life per second"
         ],
         "emotions": [
@@ -290,10 +230,20 @@
         ],
         "weight": 37
     },
-    "Radial Force": {
+    "Inevitable Rupture": {
         "value": [
-            "10% increased Area of Effect",
-            "10% increased Area Damage"
+            "10% chance for Attack Hits to apply ten Incision"
+        ],
+        "emotions": [
+            "Distilled Greed",
+            "Distilled Ire",
+            "Distilled Paranoia"
+        ],
+        "weight": 37
+    },
+    "Instability": {
+        "value": [
+            "25% chance that when Volatility on you detonates, you regain an equivalent amount of Volatility"
         ],
         "emotions": [
             "Distilled Paranoia",
@@ -302,34 +252,10 @@
         ],
         "weight": 37
     },
-    "Feel no Pain": {
-        "value": [
-            "20% increased Armour and Evasion Rating",
-            "20% increased Stun Threshold"
-        ],
-        "emotions": [
-            "Distilled Paranoia",
-            "Distilled Greed",
-            "Distilled Guilt"
-        ],
-        "weight": 39
-    },
-    "Defender's Resolve": {
-        "value": [
-            "12% increased Block chance",
-            "Stagger empties 50% faster while your Shield is lowered"
-        ],
-        "emotions": [
-            "Distilled Guilt",
-            "Distilled Paranoia",
-            "Distilled Greed"
-        ],
-        "weight": 39
-    },
     "Stand Ground": {
         "value": [
-            "Regenerate 1% of Life per second while affected by any Damaging Ailment",
-            "Regenerate 1% of Life per second while stationary"
+            "Regenerate 1% of maximum Life per second while affected by any Damaging Ailment",
+            "Regenerate 1% of maximum Life per second while stationary"
         ],
         "emotions": [
             "Distilled Greed",
@@ -338,23 +264,21 @@
         ],
         "weight": 39
     },
-    "Battle-hardened": {
+    "Staggering Wounds": {
         "value": [
-            "Hits against you have 20% reduced Critical Damage Bonus",
-            "20% increased Armour and Evasion Rating",
-            "+5 to Strength and Dexterity"
+            "50% chance to Knock Back Bleeding Enemies with Hits"
         ],
         "emotions": [
+            "Distilled Paranoia",
             "Distilled Greed",
-            "Distilled Guilt",
-            "Distilled Paranoia"
+            "Distilled Guilt"
         ],
         "weight": 39
     },
     "Primal Protection": {
         "value": [
-            "25% increased Charm Effect Duration",
-            "25% increased Charm Charges gained"
+            "40% increased Charm Effect Duration",
+            "40% increased Charm Charges gained"
         ],
         "emotions": [
             "Distilled Guilt",
@@ -375,6 +299,17 @@
         ],
         "weight": 45
     },
+    "Inspiring Leader": {
+        "value": [
+            "Banners also grant +5% to all Elemental Resistances to you and Allies"
+        ],
+        "emotions": [
+            "Distilled Paranoia",
+            "Distilled Greed",
+            "Distilled Greed"
+        ],
+        "weight": 45
+    },
     "Impenetrable Shell": {
         "value": [
             "Defend with 150% of Armour against Attacks from further than 6m"
@@ -383,18 +318,6 @@
             "Distilled Paranoia",
             "Distilled Paranoia",
             "Distilled Ire"
-        ],
-        "weight": 55
-    },
-    "Titan's Determination": {
-        "value": [
-            "25% increased Stun Threshold",
-            "20% increased Life Regeneration Rate while moving"
-        ],
-        "emotions": [
-            "Distilled Ire",
-            "Distilled Paranoia",
-            "Distilled Paranoia"
         ],
         "weight": 55
     },
@@ -483,7 +406,7 @@
     },
     "Defiance": {
         "value": [
-            "80% increased Armour and Evasion Rating when on Low Life"
+            "120% increased Armour and Evasion Rating when on Low Life"
         ],
         "emotions": [
             "Distilled Envy",
@@ -515,10 +438,10 @@
         ],
         "weight": 85
     },
-    "Critical Overload": {
+    "Tandem Assault": {
         "value": [
-            "15% increased Critical Hit Chance for Spells",
-            "15% increased Spell Damage if you've dealt a Critical Hit Recently"
+            "Companions gain your Dexterity",
+            "+15 to Dexterity"
         ],
         "emotions": [
             "Distilled Guilt",
@@ -587,10 +510,10 @@
         ],
         "weight": 93
     },
-    "Smooth Buckler": {
+    "Swift Deflection": {
         "value": [
-            "12% increased Block chance",
-            "10 Mana gained when you Block"
+            "12% increased Attack Speed if you've successfully Parried Recently",
+            "6% increased Movement Speed if you've successfully Parried Recently"
         ],
         "emotions": [
             "Distilled Guilt",
@@ -602,7 +525,7 @@
     "Thickened Arteries": {
         "value": [
             "5% reduced Movement Speed",
-            "Regenerate 1% of Life per second while stationary"
+            "Regenerate 1% of maximum Life per second while stationary"
         ],
         "emotions": [
             "Distilled Envy",
@@ -611,21 +534,22 @@
         ],
         "weight": 93
     },
-    "Practiced Signs": {
+    "Controlled Chaos": {
         "value": [
-            "6% increased Cast Speed"
+            "Maximum Volatility is 30"
         ],
         "emotions": [
             "Distilled Greed",
-            "Distilled Guilt",
-            "Distilled Envy"
+            "Distilled Envy",
+            "Distilled Guilt"
         ],
         "weight": 93
     },
     "Freedom of Movement": {
         "value": [
-            "30% increased Evasion Rating",
-            "30% increased Evasion Rating if you've Dodge Rolled Recently"
+            "20% increased Evasion Rating",
+            "10% reduced Slowing Potency of Debuffs on You",
+            "10% reduced Movement Speed Penalty from using Skills while moving"
         ],
         "emotions": [
             "Distilled Greed",
@@ -680,17 +604,6 @@
         ],
         "weight": 109
     },
-    "Break Focus": {
-        "value": [
-            "Enemies you Mark have 15% reduced Accuracy Rating"
-        ],
-        "emotions": [
-            "Distilled Paranoia",
-            "Distilled Envy",
-            "Distilled Ire"
-        ],
-        "weight": 109
-    },
     "Fear of Death": {
         "value": [
             "Minions have +150 to Accuracy Rating",
@@ -705,13 +618,25 @@
     },
     "Siphon": {
         "value": [
-            "Recover 2% of Mana on Kill",
+            "Recover 2% of maximum Mana on Kill",
             "25% increased amount of Mana Leeched"
         ],
         "emotions": [
             "Distilled Paranoia",
             "Distilled Envy",
             "Distilled Guilt"
+        ],
+        "weight": 111
+    },
+    "Long Distance Relationship": {
+        "value": [
+            "30% increased Presence Area of Effect",
+            "Minions have 20% increased Area of Effect"
+        ],
+        "emotions": [
+            "Distilled Guilt",
+            "Distilled Envy",
+            "Distilled Paranoia"
         ],
         "weight": 111
     },
@@ -750,18 +675,6 @@
         ],
         "weight": 117
     },
-    "Exposed Wounds": {
-        "value": [
-            "15% increased chance to inflict Ailments",
-            "Break 30% increased Armour on enemies affected by Ailments"
-        ],
-        "emotions": [
-            "Distilled Envy",
-            "Distilled Paranoia",
-            "Distilled Greed"
-        ],
-        "weight": 117
-    },
     "Unbreaking": {
         "value": [
             "30% increased Stun Threshold",
@@ -776,8 +689,8 @@
     },
     "Self Mortification": {
         "value": [
-            "Gain 20% of maximum Energy Shield as additional Stun Threshold",
-            "20% increased Stun Threshold while on Full Life"
+            "20% increased Stun Threshold while on Full Life",
+            "Gain additional Stun Threshold equal to 20% of maximum Energy Shield"
         ],
         "emotions": [
             "Distilled Ire",
@@ -786,10 +699,9 @@
         ],
         "weight": 163
     },
-    "Smash": {
+    "Decisive Retreat": {
         "value": [
-            "20% increased Melee Damage",
-            "40% increased Melee Damage against Heavy Stunned enemies"
+            "50% increased Critical Damage Bonus against Enemies that have exited your Presence Recently"
         ],
         "emotions": [
             "Distilled Envy",
@@ -798,10 +710,10 @@
         ],
         "weight": 163
     },
-    "Resilient Soul": {
+    "Adaptable Assault": {
         "value": [
-            "20% increased Life Regeneration rate",
-            "5% of Damage taken Recouped as Life"
+            "+4 to Melee Strike Range if you've dealt a Projectile Attack Hit in the past eight seconds",
+            "Projectiles have 25% chance to Fork if you've dealt a Melee Hit in the past eight seconds"
         ],
         "emotions": [
             "Distilled Envy",
@@ -857,24 +769,11 @@
         ],
         "weight": 189
     },
-    "Relentless Vindicator": {
-        "value": [
-            "10% increased Damage",
-            "10% increased Critical Hit Chance",
-            "+5 to Strength and Intelligence"
-        ],
-        "emotions": [
-            "Distilled Envy",
-            "Distilled Paranoia",
-            "Distilled Envy"
-        ],
-        "weight": 189
-    },
     "Heavy Drinker": {
         "value": [
             "30% increased Flask Effect Duration",
             "20% increased Life Recovery from Flasks",
-            "Recover 5% of Life when you use a Life Flask while on Low Life"
+            "Recover 5% of maximum Life when you use a Life Flask while on Low Life"
         ],
         "emotions": [
             "Distilled Envy",
@@ -885,7 +784,7 @@
     },
     "Flip the Script": {
         "value": [
-            "Recover 20% of Life when you Heavy Stun a Rare or Unique Enemy"
+            "Recover 20% of maximum Life when you Heavy Stun a Rare or Unique Enemy"
         ],
         "emotions": [
             "Distilled Ire",
@@ -893,31 +792,6 @@
             "Distilled Ire"
         ],
         "weight": 245
-    },
-    "Rapid Recharge": {
-        "value": [
-            "25% increased Energy Shield Recharge Rate",
-            "25% faster start of Energy Shield Recharge",
-            "Witch: Minions have 15% increased maximum Life",
-            "Witch: Minions Revive 15% faster"
-        ],
-        "emotions": [
-            "Distilled Guilt",
-            "Distilled Ire",
-            "Distilled Disgust"
-        ],
-        "weight": 247
-    },
-    "Potent Concoctions": {
-        "value": [
-            "Flasks applied to you have 25% increased Effect"
-        ],
-        "emotions": [
-            "Distilled Disgust",
-            "Distilled Ire",
-            "Distilled Guilt"
-        ],
-        "weight": 247
     },
     "True Strike": {
         "value": [
@@ -1025,6 +899,18 @@
         ],
         "weight": 255
     },
+    "Unleash Fire": {
+        "value": [
+            "30% increased Stun Buildup with Melee Damage",
+            "Projectiles deal 75% increased Damage against Heavy Stunned Enemies"
+        ],
+        "emotions": [
+            "Distilled Disgust",
+            "Distilled Guilt",
+            "Distilled Greed"
+        ],
+        "weight": 255
+    },
     "Wellspring": {
         "value": [
             "30% increased Mana Recovery from Flasks",
@@ -1033,19 +919,6 @@
         "emotions": [
             "Distilled Disgust",
             "Distilled Greed",
-            "Distilled Guilt"
-        ],
-        "weight": 255
-    },
-    "Remorseless": {
-        "value": [
-            "15% increased Projectile Damage",
-            "30% increased Stun Buildup against enemies within 2 metres",
-            "+5 to Strength and Dexterity"
-        ],
-        "emotions": [
-            "Distilled Greed",
-            "Distilled Disgust",
             "Distilled Guilt"
         ],
         "weight": 255
@@ -1108,22 +981,10 @@
         ],
         "weight": 271
     },
-    "Blur": {
-        "value": [
-            "4% increased Movement Speed",
-            "20% increased Evasion Rating",
-            "+10 to Dexterity"
-        ],
-        "emotions": [
-            "Distilled Paranoia",
-            "Distilled Disgust",
-            "Distilled Ire"
-        ],
-        "weight": 271
-    },
     "Roll and Strike": {
         "value": [
-            "25% increased Damage with Spears"
+            "25% increased Damage with Spears",
+            "10% increased Attack Speed with Spears"
         ],
         "emotions": [
             "Distilled Guilt",
@@ -1155,17 +1016,6 @@
             "Distilled Disgust"
         ],
         "weight": 273
-    },
-    "Sturdy Metal": {
-        "value": [
-            "80% increased Armour from Equipped Body Armour"
-        ],
-        "emotions": [
-            "Distilled Paranoia",
-            "Distilled Greed",
-            "Distilled Disgust"
-        ],
-        "weight": 279
     },
     "Cranial Impact": {
         "value": [
@@ -1240,7 +1090,7 @@
     },
     "Reinvigoration": {
         "value": [
-            "Regenerate 1% of Life per Second if you've used a Life Flask in the past 10 seconds"
+            "Regenerate 1% of maximum Life per Second if you've used a Life Flask in the past 10 seconds"
         ],
         "emotions": [
             "Distilled Disgust",
@@ -1415,18 +1265,6 @@
         ],
         "weight": 487
     },
-    "Ricochet": {
-        "value": [
-            "15% increased Projectile Damage",
-            "Projectiles have 10% chance to Chain an additional time from terrain"
-        ],
-        "emotions": [
-            "Distilled Ire",
-            "Distilled Disgust",
-            "Distilled Disgust"
-        ],
-        "weight": 487
-    },
     "Piercing Shot": {
         "value": [
             "50% chance to Pierce an Enemy"
@@ -1460,21 +1298,10 @@
         ],
         "weight": 495
     },
-    "No Escape": {
+    "Disorientation": {
         "value": [
-            "Mark Skills have 60% increased Skill Effect Duration"
-        ],
-        "emotions": [
-            "Distilled Greed",
-            "Distilled Disgust",
-            "Distilled Disgust"
-        ],
-        "weight": 495
-    },
-    "Cautious Concoctions": {
-        "value": [
-            "15% increased Flask Effect Duration",
-            "15% increased Flask Charges gained"
+            "25% increased Blind duration",
+            "25% increased Damage with Hits against Blinded Enemies"
         ],
         "emotions": [
             "Distilled Disgust",
@@ -1545,8 +1372,8 @@
     },
     "Towering Shield": {
         "value": [
-            "50% increased Defences from Equipped Shield",
-            "25% increased Chance to Block if you've Blocked with Active Block Recently"
+            "25% increased Chance to Block if you've Blocked with Active Block Recently",
+            "50% increased Defences from Equipped Shield"
         ],
         "emotions": [
             "Distilled Ire",
@@ -1603,18 +1430,6 @@
         ],
         "weight": 735
     },
-    "Mana Blessing": {
-        "value": [
-            "+20 to maximum Mana",
-            "5% increased maximum Mana"
-        ],
-        "emotions": [
-            "Distilled Guilt",
-            "Distilled Despair",
-            "Distilled Guilt"
-        ],
-        "weight": 735
-    },
     "Tainted Strike": {
         "value": [
             "25% increased Critical Hit Chance for Attacks",
@@ -1649,10 +1464,9 @@
         ],
         "weight": 739
     },
-    "Clean Shot": {
+    "Symbol of Defiance": {
         "value": [
-            "15% chance to Pierce an Enemy",
-            "15% increased Projectile Damage"
+            "+20 to maximum Valour"
         ],
         "emotions": [
             "Distilled Despair",
@@ -1673,26 +1487,25 @@
         ],
         "weight": 741
     },
+    "Rallying Icon": {
+        "value": [
+            "When you leave your Banner's Area, recover 15% of the Valour consumed for that Banner"
+        ],
+        "emotions": [
+            "Distilled Greed",
+            "Distilled Despair",
+            "Distilled Guilt"
+        ],
+        "weight": 741
+    },
     "Aftershocks": {
         "value": [
-            "40% increased Aftershock Area of Effect"
+            "40% increased Area of Effect of Aftershocks you create yourself"
         ],
         "emotions": [
             "Distilled Despair",
             "Distilled Guilt",
             "Distilled Greed"
-        ],
-        "weight": 741
-    },
-    "Flow Like Water": {
-        "value": [
-            "8% increased Attack and Cast Speed",
-            "+5 to Dexterity and Intelligence"
-        ],
-        "emotions": [
-            "Distilled Greed",
-            "Distilled Guilt",
-            "Distilled Despair"
         ],
         "weight": 741
     },
@@ -1710,7 +1523,7 @@
     },
     "Stimulants": {
         "value": [
-            "12% increased Attack Speed during any Flask Effect"
+            "16% increased Attack Speed during any Flask Effect"
         ],
         "emotions": [
             "Distilled Despair",
@@ -1722,7 +1535,7 @@
     "Heart Tissue": {
         "value": [
             "6% of Damage taken Recouped as Life",
-            "Regenerate 0.4% of Life per second if you have been Hit Recently"
+            "Regenerate 0.4% of maximum Life per second if you have been Hit Recently"
         ],
         "emotions": [
             "Distilled Paranoia",
@@ -1758,7 +1571,7 @@
     },
     "Volatile Grenades": {
         "value": [
-            "25% reduced Grenade fuse duration"
+            "25% reduced Grenade Detonation Time"
         ],
         "emotions": [
             "Distilled Paranoia",
@@ -1770,7 +1583,7 @@
     "Polished Iron": {
         "value": [
             "25% increased Armour",
-            "50% of Base Armour from Equipment also added to Stun Threshold"
+            "Gain additional Stun Threshold equal to 50% of Armour on Equipped Items"
         ],
         "emotions": [
             "Distilled Paranoia",
@@ -1911,22 +1724,12 @@
     },
     "Precise Point": {
         "value": [
-            "25% increased Damage with Spears"
+            "25% increased Damage with Spears",
+            "25% increased Accuracy Rating with Spears"
         ],
         "emotions": [
             "Distilled Guilt",
             "Distilled Envy",
-            "Distilled Despair"
-        ],
-        "weight": 813
-    },
-    "Crashing Wave": {
-        "value": [
-            "36% increased Damage if you've dealt a Critical Hit in the past 8 seconds"
-        ],
-        "emotions": [
-            "Distilled Envy",
-            "Distilled Guilt",
             "Distilled Despair"
         ],
         "weight": 813
@@ -1944,18 +1747,6 @@
         ],
         "weight": 813
     },
-    "Flow State": {
-        "value": [
-            "5% increased Skill Speed",
-            "15% increased Mana Regeneration Rate"
-        ],
-        "emotions": [
-            "Distilled Despair",
-            "Distilled Guilt",
-            "Distilled Envy"
-        ],
-        "weight": 813
-    },
     "Full Recovery": {
         "value": [
             "15% increased Life Regeneration rate",
@@ -1965,6 +1756,17 @@
             "Distilled Despair",
             "Distilled Envy",
             "Distilled Guilt"
+        ],
+        "weight": 813
+    },
+    "Unstable Bond": {
+        "value": [
+            "Gain 3 Volatility when an Allied Persistent Reviving Minion is Killed"
+        ],
+        "emotions": [
+            "Distilled Envy",
+            "Distilled Guilt",
+            "Distilled Despair"
         ],
         "weight": 813
     },
@@ -1980,30 +1782,15 @@
         ],
         "weight": 819
     },
-    "Cruel Fate": {
+    "Unspoken Bond": {
         "value": [
-            "20% increased Critical Damage Bonus",
-            "20% increased Magnitude of Non-Damaging Ailments you inflict with Critical Hits"
-        ],
-        "emotions": [
-            "Distilled Envy",
-            "Distilled Greed",
-            "Distilled Despair"
-        ],
-        "weight": 819
-    },
-    "Raw Power": {
-        "value": [
-            "20% increased Spell Damage",
-            "+10 to Intelligence",
-            "Witch: 16% increased Spell Damage",
-            "Witch: Minions deal 16% increased Damage",
-            "Witch: +10 to Intelligence"
+            "Companions have +30% to Chaos Resistance",
+            "Companions have +30% to all Elemental Resistances"
         ],
         "emotions": [
             "Distilled Greed",
-            "Distilled Envy",
-            "Distilled Despair"
+            "Distilled Despair",
+            "Distilled Envy"
         ],
         "weight": 819
     },
@@ -2022,37 +1809,12 @@
     "Austerity Measures": {
         "value": [
             "+5 to all Attributes",
-            "Gain 20% of maximum Energy Shield as additional Stun Threshold"
+            "Gain additional Stun Threshold equal to 20% of maximum Energy Shield"
         ],
         "emotions": [
             "Distilled Paranoia",
             "Distilled Envy",
             "Distilled Despair"
-        ],
-        "weight": 837
-    },
-    "Reverberating Impact": {
-        "value": [
-            "Break 25% increased Armour",
-            "16% increased Area of Effect for Attacks"
-        ],
-        "emotions": [
-            "Distilled Envy",
-            "Distilled Paranoia",
-            "Distilled Despair"
-        ],
-        "weight": 837
-    },
-    "Honed Instincts": {
-        "value": [
-            "8% increased Projectile Speed",
-            "8% increased Attack Speed",
-            "+10 to Dexterity"
-        ],
-        "emotions": [
-            "Distilled Despair",
-            "Distilled Envy",
-            "Distilled Paranoia"
         ],
         "weight": 837
     },
@@ -2068,11 +1830,11 @@
         ],
         "weight": 891
     },
-    "Devoted Protector": {
+    "Precision Salvo": {
         "value": [
-            "10% increased Mana Regeneration Rate",
-            "Regenerate 0.5% of Life per second",
-            "+5 to Strength and Intelligence"
+            "8% increased Projectile Speed",
+            "6% increased Attack Speed",
+            "12% increased Accuracy Rating"
         ],
         "emotions": [
             "Distilled Despair",
@@ -2083,7 +1845,7 @@
     },
     "Desperate Times": {
         "value": [
-            "Regenerate 1.5% of Life per second while on Low Life",
+            "Regenerate 1.5% of maximum Life per second while on Low Life",
             "40% increased Life Recovery from Flasks used when on Low Life"
         ],
         "emotions": [
@@ -2153,7 +1915,7 @@
     },
     "Spiked Armour": {
         "value": [
-            "Gain Physical Thorns damage equal to 2% of Armour from equipped Body Armour"
+            "Thorns Damage has 50% chance to ignore Enemy Armour"
         ],
         "emotions": [
             "Distilled Despair",
@@ -2175,7 +1937,7 @@
     },
     "Javelin": {
         "value": [
-            "25% increased Damage with Spears"
+            "40% increased Critical Damage Bonus with Spears"
         ],
         "emotions": [
             "Distilled Greed",
@@ -2198,7 +1960,7 @@
     },
     "In the Thick of It": {
         "value": [
-            "Regenerate 2.5% of Life per second while Surrounded"
+            "Regenerate 2.5% of maximum Life per second while Surrounded"
         ],
         "emotions": [
             "Distilled Disgust",
@@ -2241,18 +2003,6 @@
         ],
         "weight": 999
     },
-    "Deadly Swarm": {
-        "value": [
-            "Minions deal 15% increased Damage",
-            "Minions have 20% increased Critical Hit Chance"
-        ],
-        "emotions": [
-            "Distilled Paranoia",
-            "Distilled Despair",
-            "Distilled Disgust"
-        ],
-        "weight": 999
-    },
     "Repulsion": {
         "value": [
             "Area Skills have 20% chance to Knock Enemies Back on Hit",
@@ -2281,7 +2031,7 @@
         "value": [
             "20% increased Critical Hit Chance for Attacks",
             "20% increased Critical Damage Bonus for Attack Damage",
-            "20% increased Stun Buildup with Critical Hits"
+            "20% more Stun Buildup with Critical Hits"
         ],
         "emotions": [
             "Distilled Despair",
@@ -2302,22 +2052,10 @@
         ],
         "weight": 1053
     },
-    "Pinned Down": {
-        "value": [
-            "Enemies are Maimed for 4 seconds after becoming Unpinned",
-            "40% increased Pin Buildup"
-        ],
-        "emotions": [
-            "Distilled Disgust",
-            "Distilled Despair",
-            "Distilled Envy"
-        ],
-        "weight": 1053
-    },
     "Hallowed": {
         "value": [
             "20% increased Stun Recovery",
-            "Gain 20% of maximum Energy Shield as additional Stun Threshold"
+            "Gain additional Stun Threshold equal to 20% of maximum Energy Shield"
         ],
         "emotions": [
             "Distilled Despair",
@@ -2340,8 +2078,7 @@
     },
     "Reprisal": {
         "value": [
-            "Attack Skills deal 25% increased Damage while holding a Shield",
-            "75% increased Evasion from Equipped Shield"
+            "30% increased Parried Debuff Magnitude"
         ],
         "emotions": [
             "Distilled Ire",
@@ -2350,11 +2087,9 @@
         ],
         "weight": 1459
     },
-    "Step Like Mist": {
+    "Lifelong Friend": {
         "value": [
-            "4% increased Movement Speed",
-            "15% increased Mana Regeneration Rate",
-            "+5 to Dexterity and Intelligence"
+            "Minions Revive 35% faster if all your Minions are Companions"
         ],
         "emotions": [
             "Distilled Despair",
@@ -2398,19 +2133,6 @@
         ],
         "weight": 1467
     },
-    "Relentless": {
-        "value": [
-            "15% increased Armour",
-            "Regenerate 0.5% of Life per second",
-            "+10 to Strength"
-        ],
-        "emotions": [
-            "Distilled Despair",
-            "Distilled Despair",
-            "Distilled Greed"
-        ],
-        "weight": 1467
-    },
     "Escape Strategy": {
         "value": [
             "100% increased Evasion Rating if you have been Hit Recently",
@@ -2446,11 +2168,10 @@
         ],
         "weight": 1539
     },
-    "Brutal": {
+    "Shredding Contraptions": {
         "value": [
-            "10% increased Stun Buildup",
-            "16% increased Melee Damage",
-            "+10 to Strength"
+            "Enemies affected by your Hazards Recently have 25% reduced Armour",
+            "Enemies affected by your Hazards Recently have 25% reduced Evasion Rating"
         ],
         "emotions": [
             "Distilled Despair",
@@ -2458,18 +2179,6 @@
             "Distilled Envy"
         ],
         "weight": 1539
-    },
-    "Lasting Concoctions": {
-        "value": [
-            "25% increased Flask Effect Duration",
-            "25% increased Flask Charges gained"
-        ],
-        "emotions": [
-            "Distilled Despair",
-            "Distilled Disgust",
-            "Distilled Despair"
-        ],
-        "weight": 1701
     },
     "Sand in the Eyes": {
         "value": [
@@ -2519,6 +2228,18 @@
         ],
         "weight": 2191
     },
+    "Primal Sundering": {
+        "value": [
+            "Damage Penetrates 12% Elemental Resistances",
+            "10% increased Area of Effect for Attacks"
+        ],
+        "emotions": [
+            "Distilled Guilt",
+            "Distilled Fear",
+            "Distilled Ire"
+        ],
+        "weight": 2191
+    },
     "Far Sighted": {
         "value": [
             "30% reduced penalty to Accuracy Rating at range"
@@ -2530,9 +2251,10 @@
         ],
         "weight": 2191
     },
-    "Two-Pronged Attack": {
+    "Nourishing Ally": {
         "value": [
-            "Minions deal 25% increased Damage"
+            "Companions have 20% increased maximum Life",
+            "20% increased Life Recovery Rate while in the Presence of your Companion"
         ],
         "emotions": [
             "Distilled Ire",
@@ -2540,6 +2262,18 @@
             "Distilled Guilt"
         ],
         "weight": 2191
+    },
+    "Counterstancing": {
+        "value": [
+            "Successfully Parrying a Melee Hit grants 40% increased Damage to your next Ranged Attack",
+            "Successfully Parrying a Projectile Hit grants 40% increased Damage to your next Melee Attack"
+        ],
+        "emotions": [
+            "Distilled Guilt",
+            "Distilled Guilt",
+            "Distilled Fear"
+        ],
+        "weight": 2193
     },
     "Shattering Blow": {
         "value": [
@@ -2552,9 +2286,10 @@
         ],
         "weight": 2193
     },
-    "Swift Skewering": {
+    "Focused Thrust": {
         "value": [
-            "8% increased Attack Speed with Spears"
+            "75% increased Melee Damage with Spears while Surrounded",
+            "40% increased Projectile Damage with Spears while there are no Enemies within 3m"
         ],
         "emotions": [
             "Distilled Fear",
@@ -2612,7 +2347,7 @@
     },
     "Thornhide": {
         "value": [
-            "+5% to Thorns Critical Hit Chance"
+            "+6% to Thorns Critical Hit Chance"
         ],
         "emotions": [
             "Distilled Ire",
@@ -2620,18 +2355,6 @@
             "Distilled Fear"
         ],
         "weight": 2197
-    },
-    "Mystic Stance": {
-        "value": [
-            "30% faster start of Energy Shield Recharge",
-            "30% increased Stun Threshold while on Full Life"
-        ],
-        "emotions": [
-            "Distilled Fear",
-            "Distilled Greed",
-            "Distilled Guilt"
-        ],
-        "weight": 2199
     },
     "Tenfold Attacks": {
         "value": [
@@ -2683,7 +2406,7 @@
     },
     "Icebreaker": {
         "value": [
-            "Gain 100% of Maximum Energy Shield as additional Freeze Threshold"
+            "Gain 50% of maximum Energy Shield as additional Freeze Threshold"
         ],
         "emotions": [
             "Distilled Ire",
@@ -2762,6 +2485,17 @@
         ],
         "weight": 2217
     },
+    "Efficient Contraptions": {
+        "value": [
+            "Hazards have 15% chance to rearm after they are triggered"
+        ],
+        "emotions": [
+            "Distilled Fear",
+            "Distilled Paranoia",
+            "Distilled Guilt"
+        ],
+        "weight": 2217
+    },
     "Core of the Guardian": {
         "value": [
             "100% increased Defences from Equipped Shield"
@@ -2797,18 +2531,6 @@
         ],
         "weight": 2223
     },
-    "Essence of the Storm": {
-        "value": [
-            "Gain 5% of Damage as Extra Lightning Damage",
-            "30% increased chance to Shock"
-        ],
-        "emotions": [
-            "Distilled Greed",
-            "Distilled Fear",
-            "Distilled Paranoia"
-        ],
-        "weight": 2223
-    },
     "Fireproof": {
         "value": [
             "+15% to Fire Resistance",
@@ -2836,7 +2558,7 @@
     "Thicket Warding": {
         "value": [
             "20% chance for Charms you use to not consume Charges",
-            "Recover 5% of Mana when a Charm is used"
+            "Recover 5% of maximum Mana when a Charm is used"
         ],
         "emotions": [
             "Distilled Paranoia",
@@ -2918,7 +2640,7 @@
     },
     "Vengeance": {
         "value": [
-            "40% increased Thorns damage"
+            "10% of Thorns Damage Leeched as Life"
         ],
         "emotions": [
             "Distilled Guilt",
@@ -2999,8 +2721,8 @@
     },
     "Ancestral Mending": {
         "value": [
-            "Regenerate 1% of Life per second while you have a Totem",
-            "Totems Regenerate 3% of Life per second"
+            "Regenerate 1% of maximum Life per second while you have a Totem",
+            "Totems Regenerate 3% of maximum Life per second"
         ],
         "emotions": [
             "Distilled Envy",
@@ -3035,7 +2757,7 @@
     "Gravedigger": {
         "value": [
             "Minions Revive 15% faster",
-            "You gain 2% Life when one of your Minions is Revived"
+            "Recover 2% of maximum Life when one of your Minions is Revived"
         ],
         "emotions": [
             "Distilled Ire",
@@ -3095,24 +2817,12 @@
     "Stigmata": {
         "value": [
             "Offerings have 30% increased Maximum Life",
-            "Recover 3% of Life when you create an Offering"
+            "Recover 3% of maximum Life when you create an Offering"
         ],
         "emotions": [
             "Distilled Disgust",
             "Distilled Guilt",
             "Distilled Fear"
-        ],
-        "weight": 2433
-    },
-    "Pure Energy": {
-        "value": [
-            "30% increased maximum Energy Shield",
-            "+10 to Intelligence"
-        ],
-        "emotions": [
-            "Distilled Fear",
-            "Distilled Guilt",
-            "Distilled Disgust"
         ],
         "weight": 2433
     },
@@ -3142,7 +2852,7 @@
     },
     "Waters of Life": {
         "value": [
-            "Recover 2% of Life when you use a Mana Flask",
+            "Recover 2% of maximum Life when you use a Mana Flask",
             "Mana Flasks gain 0.1 charges per Second"
         ],
         "emotions": [
@@ -3391,7 +3101,8 @@
     },
     "Sturdy Ally": {
         "value": [
-            "Minions have 25% increased maximum Life"
+            "Companions gain your Strength",
+            "+15 to Strength"
         ],
         "emotions": [
             "Distilled Fear",
@@ -3449,6 +3160,17 @@
         ],
         "weight": 2997
     },
+    "Thousand Cuts": {
+        "value": [
+            "Enemies you apply Incision to take 2% increased Physical Damage per Incision"
+        ],
+        "emotions": [
+            "Distilled Envy",
+            "Distilled Fear",
+            "Distilled Despair"
+        ],
+        "weight": 2997
+    },
     "Anticipation": {
         "value": [
             "Skills Supported by Unleash have 25% increased Seal gain frequency"
@@ -3496,7 +3218,7 @@
     },
     "Master Fletching": {
         "value": [
-            "30% increased bonuses gained from Equipped Quiver"
+            "20% increased bonuses gained from Equipped Quiver"
         ],
         "emotions": [
             "Distilled Fear",
@@ -3529,20 +3251,6 @@
         ],
         "weight": 4375
     },
-    "Path of Storms": {
-        "value": [
-            "18% increased Lightning Damage",
-            "30% increased chance to Shock",
-            "Witch: 18% increased Chaos Damage",
-            "Witch: 15% increased Skill Effect Duration"
-        ],
-        "emotions": [
-            "Distilled Fear",
-            "Distilled Fear",
-            "Distilled Ire"
-        ],
-        "weight": 4375
-    },
     "Impact Force": {
         "value": [
             "20% increased Stun Buildup",
@@ -3570,8 +3278,8 @@
     "Vile Mending": {
         "value": [
             "Minions have 20% increased maximum Life",
-            "Minions Regenerate 3% of Life per second",
-            "Minions have +13% to Chaos Resistance"
+            "Minions have +13% to Chaos Resistance",
+            "Minions Regenerate 3% of maximum Life per second"
         ],
         "emotions": [
             "Distilled Greed",
@@ -3589,6 +3297,18 @@
             "Distilled Fear",
             "Distilled Fear",
             "Distilled Greed"
+        ],
+        "weight": 4383
+    },
+    "Enveloping Presence": {
+        "value": [
+            "30% increased Presence Area of Effect",
+            "Aura Skills have 6% increased Magnitudes"
+        ],
+        "emotions": [
+            "Distilled Fear",
+            "Distilled Greed",
+            "Distilled Fear"
         ],
         "weight": 4383
     },
@@ -3675,7 +3395,7 @@
     },
     "Guts": {
         "value": [
-            "Recover 3% of Life for each Endurance Charge consumed",
+            "Recover 3% of maximum Life for each Endurance Charge consumed",
             "+1 to Maximum Endurance Charges"
         ],
         "emotions": [
@@ -3789,14 +3509,25 @@
         ],
         "weight": 6571
     },
-    "Resourceful Ally": {
+    "Thirsting Ally": {
         "value": [
-            "Minions deal 25% increased Damage"
+            "Life Leech from your Hits also applies to your Companion"
         ],
         "emotions": [
             "Distilled Ire",
             "Distilled Greed",
             "Distilled Suffering"
+        ],
+        "weight": 6571
+    },
+    "Bannerman": {
+        "value": [
+            "Banner Buffs linger on you for 4 seconds after you leave the Area"
+        ],
+        "emotions": [
+            "Distilled Suffering",
+            "Distilled Greed",
+            "Distilled Ire"
         ],
         "weight": 6571
     },
@@ -3964,7 +3695,7 @@
     },
     "Stylebender": {
         "value": [
-            "Break 30% increased Armour on enemies affected by Ailments",
+            "Hits Break 30% increased Armour on targets with Ailments",
             "+10 to Strength",
             "25% increased Physical Damage"
         ],
@@ -3987,6 +3718,18 @@
         ],
         "weight": 6597
     },
+    "Unhindered": {
+        "value": [
+            "20% reduced Slowing Potency of Debuffs on You",
+            "12% reduced Movement Speed Penalty from using Skills while moving"
+        ],
+        "emotions": [
+            "Distilled Suffering",
+            "Distilled Paranoia",
+            "Distilled Paranoia"
+        ],
+        "weight": 6615
+    },
     "Sigil of Lightning": {
         "value": [
             "30% increased Damage with Hits against Shocked Enemies"
@@ -4000,7 +3743,8 @@
     },
     "Cooked": {
         "value": [
-            "50% increased Critical Damage Bonus during any Flask Effect"
+            "60% increased Critical Damage Bonus",
+            "15% reduced Global Defences"
         ],
         "emotions": [
             "Distilled Suffering",
@@ -4130,17 +3874,16 @@
         ],
         "weight": 6651
     },
-    "Mindful Awareness": {
+    "Wrapped Quiver": {
         "value": [
-            "24% increased Evasion Rating",
-            "24% increased maximum Energy Shield"
+            "20% increased bonuses gained from Equipped Quiver"
         ],
         "emotions": [
-            "Distilled Paranoia",
-            "Distilled Envy",
-            "Distilled Suffering"
+            "Distilled Greed",
+            "Distilled Suffering",
+            "Distilled Envy"
         ],
-        "weight": 6669
+        "weight": 6651
     },
     "The Power Within": {
         "value": [
@@ -4437,18 +4180,6 @@
         ],
         "weight": 7291
     },
-    "Essence of the Mountain": {
-        "value": [
-            "Gain 5% of Damage as Extra Cold Damage",
-            "20% increased Freeze Buildup"
-        ],
-        "emotions": [
-            "Distilled Despair",
-            "Distilled Ire",
-            "Distilled Suffering"
-        ],
-        "weight": 7291
-    },
     "Echoing Thunder": {
         "value": [
             "30% increased Elemental Damage if you've Shocked an Enemy Recently"
@@ -4457,6 +4188,17 @@
             "Distilled Despair",
             "Distilled Suffering",
             "Distilled Ire"
+        ],
+        "weight": 7291
+    },
+    "Inspiring Ally": {
+        "value": [
+            "Increases and Reductions to Companion Damage also apply to you"
+        ],
+        "emotions": [
+            "Distilled Ire",
+            "Distilled Suffering",
+            "Distilled Despair"
         ],
         "weight": 7291
     },
@@ -4511,7 +4253,7 @@
     "Quick Recovery": {
         "value": [
             "40% increased Stun Recovery",
-            "Regenerate 5% of Life over 1 second when Stunned"
+            "Regenerate 5% of maximum Life over 1 second when Stunned"
         ],
         "emotions": [
             "Distilled Despair",
@@ -4568,9 +4310,9 @@
         ],
         "weight": 7317
     },
-    "Vile Wounds": {
+    "Nurturing Guardian": {
         "value": [
-            "33% increased Damage with Hits against Enemies affected by Elemental Ailments"
+            "Life Recovery from your Flasks also applies to your Companions"
         ],
         "emotions": [
             "Distilled Paranoia",
@@ -4600,31 +4342,6 @@
             "Distilled Despair",
             "Distilled Suffering",
             "Distilled Envy"
-        ],
-        "weight": 7371
-    },
-    "Path of Winter": {
-        "value": [
-            "18% increased Cold Damage",
-            "30% increased Freeze Buildup",
-            "Witch: Minions deal 15% increased Damage",
-            "Witch: Minions have 3% increased Attack and Cast Speed"
-        ],
-        "emotions": [
-            "Distilled Suffering",
-            "Distilled Envy",
-            "Distilled Despair"
-        ],
-        "weight": 7371
-    },
-    "Bolstering Presence": {
-        "value": [
-            "20% increased Effect of Auras from your Aura Skills"
-        ],
-        "emotions": [
-            "Distilled Despair",
-            "Distilled Envy",
-            "Distilled Suffering"
         ],
         "weight": 7371
     },
@@ -4778,7 +4495,7 @@
         ],
         "weight": 8751
     },
-    "Deflection": {
+    "Glancing Hits": {
         "value": [
             "30% increased Block chance",
             "You take 10% of damage from Blocked Hits"
@@ -4787,20 +4504,6 @@
             "Distilled Greed",
             "Distilled Fear",
             "Distilled Suffering"
-        ],
-        "weight": 8757
-    },
-    "Path of Flame": {
-        "value": [
-            "18% increased Fire Damage",
-            "30% increased chance to Ignite",
-            "Witch: 15% increased Critical Hit Chance for Spells",
-            "Witch: 18% increased Physical Damage"
-        ],
-        "emotions": [
-            "Distilled Suffering",
-            "Distilled Fear",
-            "Distilled Greed"
         ],
         "weight": 8757
     },
@@ -4876,7 +4579,7 @@
     "Immortal Infamy": {
         "value": [
             "10% increased Energy Shield Recharge Rate",
-            "Recover 2% of Life on Kill",
+            "Recover 2% of maximum Life on Kill",
             "+10 to Intelligence"
         ],
         "emotions": [
@@ -4981,8 +4684,8 @@
     },
     "Spiked Shield": {
         "value": [
-            "50% increased Defences from Equipped Shield",
-            "1% increased Attack Damage per 75 Armour or Evasion Rating on Shield"
+            "1% increased Attack Damage per 75 Armour or Evasion Rating on Shield",
+            "50% increased Defences from Equipped Shield"
         ],
         "emotions": [
             "Distilled Fear",
@@ -5041,7 +4744,7 @@
     "Leeching Toxins": {
         "value": [
             "30% increased Magnitude of Poison you inflict",
-            "Recover 2% of Life on Killing a Poisoned Enemy"
+            "Recover 2% of maximum Life on Killing a Poisoned Enemy"
         ],
         "emotions": [
             "Distilled Greed",
@@ -5124,7 +4827,7 @@
     },
     "Falcon Technique": {
         "value": [
-            "1% increased Attack Speed per 15 Dexterity"
+            "1% increased Attack Speed per 25 Dexterity"
         ],
         "emotions": [
             "Distilled Suffering",
@@ -5147,7 +4850,7 @@
     "Master of Hexes": {
         "value": [
             "25% reduced Curse Duration",
-            "18% increased Effect of your Curses"
+            "18% increased Curse Magnitudes"
         ],
         "emotions": [
             "Distilled Suffering",
@@ -5181,7 +4884,7 @@
     },
     "Pile On": {
         "value": [
-            "60% increased Damage against Enemies with Fully Broken Armour"
+            "30% increased effect of Fully Broken Armour"
         ],
         "emotions": [
             "Distilled Isolation",
@@ -5222,6 +4925,17 @@
             "Distilled Guilt",
             "Distilled Ire",
             "Distilled Isolation"
+        ],
+        "weight": 19687
+    },
+    "Escalating Mayhem": {
+        "value": [
+            "5% increased Damage for each Hazard triggered Recently , up to 50%"
+        ],
+        "emotions": [
+            "Distilled Isolation",
+            "Distilled Guilt",
+            "Distilled Ire"
         ],
         "weight": 19687
     },
@@ -5334,8 +5048,8 @@
     },
     "Unforgiving": {
         "value": [
-            "Inherent Rage Loss starts 1 second later",
-            "+4 to Maximum Rage"
+            "+4 to Maximum Rage",
+            "Inherent Rage Loss starts 1 second later"
         ],
         "emotions": [
             "Distilled Isolation",
@@ -5393,7 +5107,7 @@
     },
     "One with the River": {
         "value": [
-            "30% increased Defences while wielding a Staff",
+            "30% increased Defences while wielding a Quarterstaff",
             "30% increased Freeze Buildup with Quarterstaves",
             "30% increased Stun Buildup with Quarterstaves",
             "30% increased Daze Buildup with Quarterstaves"
@@ -5443,7 +5157,7 @@
     "Heavy Buffer": {
         "value": [
             "40% increased maximum Energy Shield",
-            "10% reduced maximum Life"
+            "5% of Damage taken bypasses Energy Shield"
         ],
         "emotions": [
             "Distilled Greed",
@@ -5578,18 +5292,6 @@
         ],
         "weight": 19767
     },
-    "Sturdy Mind": {
-        "value": [
-            "+30 to maximum Mana",
-            "14% increased Mana Regeneration Rate"
-        ],
-        "emotions": [
-            "Distilled Isolation",
-            "Distilled Envy",
-            "Distilled Guilt"
-        ],
-        "weight": 19767
-    },
     "Inner Faith": {
         "value": [
             "20% increased Evasion Rating",
@@ -5652,23 +5354,12 @@
     },
     "Invocated Efficiency": {
         "value": [
-            "Recover 3% of Mana when you Invoke a Spell",
+            "Recover 3% of maximum Mana when you Invoke a Spell",
             "Triggered Spells deal 45% increased Spell Damage"
         ],
         "emotions": [
             "Distilled Isolation",
             "Distilled Envy",
-            "Distilled Paranoia"
-        ],
-        "weight": 19791
-    },
-    "Hold Focus": {
-        "value": [
-            "15% increased Effect of your Mark Skills"
-        ],
-        "emotions": [
-            "Distilled Envy",
-            "Distilled Isolation",
             "Distilled Paranoia"
         ],
         "weight": 19791
@@ -5733,7 +5424,7 @@
     },
     "Revenge": {
         "value": [
-            "12% increased Attack Speed if you've been Hit Recently"
+            "Gain Physical Thorns damage equal to 3% of Armour on Equipped Body Armour"
         ],
         "emotions": [
             "Distilled Ire",
@@ -5780,6 +5471,7 @@
     },
     "Marked for Sickness": {
         "value": [
+            "Enemies you Mark have 10% reduced Accuracy Rating",
             "Enemies you Mark take 10% increased Damage"
         ],
         "emotions": [
@@ -5839,8 +5531,8 @@
     },
     "Split the Earth": {
         "value": [
-            "10% chance to Aftershock for Slam Skills you use with Maces",
-            "10% chance to Aftershock for Strike Skills you use with Maces"
+            "10% chance for Mace Slam Skills you use yourself to cause Aftershocks",
+            "10% chance for Mace Strike Skills you use yourself to cause Aftershocks , dealing"
         ],
         "emotions": [
             "Distilled Isolation",
@@ -5851,8 +5543,8 @@
     },
     "Stacking Toxins": {
         "value": [
-            "Targets can be affected by +1 of your Poisons at the same time",
-            "20% reduced Magnitude of Poison you inflict"
+            "20% reduced Magnitude of Poison you inflict",
+            "Targets can be affected by +1 of your Poisons at the same time"
         ],
         "emotions": [
             "Distilled Isolation",
@@ -5992,7 +5684,7 @@
     "Event Horizon": {
         "value": [
             "53% increased Chaos Damage",
-            "Lose 3% of Life and Energy Shield when you use a Chaos Skill"
+            "Lose 3% of maximum Life and Energy Shield when you use a Chaos Skill"
         ],
         "emotions": [
             "Distilled Despair",
@@ -6122,7 +5814,7 @@
     "Lingering Whispers": {
         "value": [
             "40% increased Curse Duration",
-            "10% increased Effect of your Curses"
+            "10% increased Curse Magnitudes"
         ],
         "emotions": [
             "Distilled Isolation",
@@ -6253,18 +5945,6 @@
         ],
         "weight": 21871
     },
-    "Dampening Shield": {
-        "value": [
-            "28% increased maximum Energy Shield",
-            "Gain 12% of maximum Energy Shield as additional Stun Threshold"
-        ],
-        "emotions": [
-            "Distilled Guilt",
-            "Distilled Fear",
-            "Distilled Isolation"
-        ],
-        "weight": 21873
-    },
     "Fervour": {
         "value": [
             "+2 to Maximum Frenzy Charges"
@@ -6314,7 +5994,7 @@
     },
     "Fleshcrafting": {
         "value": [
-            "Minions gain 15% of their Maximum Life as Extra Maximum Energy Shield"
+            "Minions gain 15% of their maximum Life as Extra maximum Energy Shield"
         ],
         "emotions": [
             "Distilled Isolation",
@@ -6493,9 +6173,9 @@
         "value": [
             "3% increased Movement Speed",
             "29% increased Chaos Damage",
-            "-13% to Chaos Resistance",
-            "23% reduced Light Radius",
-            "7% increased Attributes"
+            "+13 to all Attributes",
+            "-7% to Chaos Resistance",
+            "23% reduced Light Radius"
         ],
         "emotions": [
             "Distilled Isolation",
@@ -6552,7 +6232,7 @@
     },
     "Raw Mana": {
         "value": [
-            "12% increased maximum Mana",
+            "8% increased maximum Mana",
             "10% increased Mana Cost of Skills"
         ],
         "emotions": [
@@ -6667,7 +6347,7 @@
     },
     "Polymathy": {
         "value": [
-            "10% increased Attributes"
+            "7% increased Attributes"
         ],
         "emotions": [
             "Distilled Isolation",
@@ -6678,8 +6358,8 @@
     },
     "Power Shots": {
         "value": [
-            "15% reduced Attack Speed with Crossbows",
-            "80% increased Critical Damage Bonus with Crossbows"
+            "80% increased Critical Damage Bonus with Crossbows",
+            "15% reduced Attack Speed with Crossbows"
         ],
         "emotions": [
             "Distilled Paranoia",
@@ -6697,6 +6377,17 @@
             "Distilled Suffering",
             "Distilled Isolation",
             "Distilled Paranoia"
+        ],
+        "weight": 26271
+    },
+    "Easy Going": {
+        "value": [
+            "Companions have 20% reduced Reservation"
+        ],
+        "emotions": [
+            "Distilled Suffering",
+            "Distilled Paranoia",
+            "Distilled Isolation"
         ],
         "weight": 26271
     },
@@ -6772,7 +6463,7 @@
     },
     "Cluster Bombs": {
         "value": [
-            "50% increased Grenade fuse duration",
+            "50% increased Grenade Detonation Time",
             "Grenade Skills Fire an additional Projectile"
         ],
         "emotions": [
@@ -6784,7 +6475,7 @@
     },
     "Sniper": {
         "value": [
-            "Arrows gain Critical Hit Chance as they travel farther, up to 60% increased Critical Hit Chance"
+            "Arrows gain Critical Hit Chance as they travel farther, up to"
         ],
         "emotions": [
             "Distilled Isolation",
@@ -6852,7 +6543,7 @@
     },
     "Urgent Call": {
         "value": [
-            "Recover 2% of Life and Mana when you use a Warcry",
+            "Recover 2% of maximum Life and Mana when you use a Warcry",
             "24% increased Warcry Speed",
             "18% increased Warcry Cooldown Recovery Rate"
         ],
@@ -6923,11 +6614,23 @@
     "Eldritch Will": {
         "value": [
             "3% increased maximum Life, Mana and Energy Shield",
-            "Gain 20% of maximum Energy Shield as additional Stun Threshold"
+            "Gain additional Stun Threshold equal to 20% of maximum Energy Shield"
         ],
         "emotions": [
             "Distilled Isolation",
             "Distilled Guilt",
+            "Distilled Isolation"
+        ],
+        "weight": 39369
+    },
+    "Profane Commander": {
+        "value": [
+            "30% increased Presence Area of Effect",
+            "5% increased Spirit"
+        ],
+        "emotions": [
+            "Distilled Guilt",
+            "Distilled Isolation",
             "Distilled Isolation"
         ],
         "weight": 39369
@@ -6994,7 +6697,7 @@
     "Zone of Control": {
         "value": [
             "40% increased Area of Effect of Curses",
-            "8% increased Effect of your Curses",
+            "8% increased Curse Magnitudes",
             "Enemies you Curse are Hindered , with 15% reduced Movement Speed"
         ],
         "emotions": [
@@ -7085,7 +6788,7 @@
     },
     "Lightning Rod": {
         "value": [
-            "Lightning Damage with Non-Critical Hits is Lucky"
+            "30% chance for Lightning Damage with Hits to be Lucky"
         ],
         "emotions": [
             "Distilled Suffering",
@@ -7096,7 +6799,8 @@
     },
     "Unnatural Resilience": {
         "value": [
-            "2% to Maximum Fire Resistance for each 40% Uncapped Fire Resistance"
+            "+5% to all Elemental Resistances",
+            "1% to Maximum Fire Resistance for each 40% Uncapped Fire Resistance"
         ],
         "emotions": [
             "Distilled Isolation",
