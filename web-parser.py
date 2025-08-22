@@ -29,17 +29,21 @@ def clean_json_file(file_path):
 
 def parse_passive_value(block):
     """
-    Parse a block to extract full text description, including KeywordPopups.
+    Parse a block to extract full text description, including <span> and <a> tags.
+    Preserves the correct order of text.
     """
     description_parts = []
-    for child in block.children:
-        if child.name == "span" and "mod-value" in child.get("class", []):
-            description_parts.append(child.get_text(strip=True))
-        elif child.name == "span" and "KeywordPopups" in child.get("class", []):
-            description_parts.append(child.get_text(strip=True))
-        elif isinstance(child, str):
+
+    # Use .descendants to iterate over all child nodes (tags and strings)
+    for child in block.descendants:
+        if isinstance(child, str):
             description_parts.append(child.strip())
-    return " ".join(filter(None, description_parts)) or None
+        elif child.name in ("span", "a") and ("mod-value" in child.get("class", []) or "KeywordPopups" in child.get("class", [])):
+            description_parts.append(child.get_text(strip=True))
+
+    # Join non-empty parts preserving order
+    return " ".join(s.strip() for s in block.stripped_strings)
+
 
 def parse_oils_and_values(table_row):
     """
