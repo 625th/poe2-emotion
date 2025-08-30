@@ -341,8 +341,9 @@
 
                     data[key].emotions.forEach(emotion => {
                         const img = document.createElement('img');
-                        const emotionName = emotion.replace('Distilled ', '');
-                        img.src = `img/distilled${emotionName.toLowerCase()}.webp`;
+                        const emotionName = emotion.split(" ").pop();
+                        const imgFileName = emotion.toLowerCase().replace(/\s+/g, '');
+                        img.src = `img/${imgFileName}.webp`;
                         img.alt = emotionName;
                         img.classList.add('emotion-img');
                         img.style.width = '72px';
@@ -388,52 +389,52 @@
 <body>
     <div class="container"><div class="image-input-wrapper">
         <div class="input-group">
-            <img src="img/distilledire.webp" alt="Ire">
+            <img src="img/dilutedliquidire.webp" alt="Ire">
             <label>Ire</label>
             <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
-            <img src="img/distilledguilt.webp" alt="Guilt">
+            <img src="img/dilutedliquidguilt.webp" alt="Guilt">
             <label>Guilt</label>
             <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
-            <img src="img/distilledgreed.webp" alt="Greed">
+            <img src="img/dilutedliquidgreed.webp" alt="Greed">
             <label>Greed</label>
             <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
-            <img src="img/distilledparanoia.webp" alt="Paranoia">
+            <img src="img/liquidparanoia.webp" alt="Paranoia">
             <label>Paranoia</label>
             <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
-            <img src="img/distilledenvy.webp" alt="Envy">
+            <img src="img/liquidenvy.webp" alt="Envy">
             <label>Envy</label>
             <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
-            <img src="img/distilleddisgust.webp" alt="Disgust">
+            <img src="img/liquiddisgust.webp" alt="Disgust">
             <label>Disgust</label>
             <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
-            <img src="img/distilleddespair.webp" alt="Despair">
+            <img src="img/liquiddespair.webp" alt="Despair">
             <label>Despair</label>
             <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
-            <img src="img/distilledfear.webp" alt="Fear">
+            <img src="img/concentratedliquidfear.webp" alt="Fear">
             <label>Fear</label>
             <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
-            <img src="img/distilledsuffering.webp" alt="Suffering">
+            <img src="img/concentratedliquidsuffering.webp" alt="Suffering">
             <label>Suffering</label>
             <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
         <div class="input-group">
-            <img src="img/distilledisolation.webp" alt="Isolation">
+            <img src="img/concentratedliquidisolation.webp" alt="Isolation">
             <label>Isolation</label>
             <input type="number" class="number-input" min="0" max="999" placeholder="0">
         </div>
@@ -443,52 +444,52 @@
             <span class="tooltip">
                 <table>
                     <tr>
-                        <td><img src="img/distilledire.webp" alt="Ire"></td>
+                        <td><img src="img/dilutedliquidire.webp" alt="Ire"></td>
                         <td>20% increased Magic Monsters
 Players in Area are 7% Delirious</td>
                     </tr>
                     <tr>
-                        <td><img src="img/distilledguilt.webp" alt="Guilt"></td>
+                        <td><img src="img/dilutedliquidguilt.webp" alt="Guilt"></td>
                         <td>8% increased Pack size
 Players in Area are 9% Delirious</td>
                     </tr>
                     <tr>
-                        <td><img src="img/distilledgreed.webp" alt="Greed"></td>
+                        <td><img src="img/dilutedliquidgreed.webp" alt="Greed"></td>
                         <td>8% increased Rarity of Items found in this Area
 Players in Area are 10% Delirious</td>
                     </tr>
                     <tr>
-                        <td><img src="img/distilledparanoia.webp" alt="Paranoia"></td>
+                        <td><img src="img/liquidparanoia.webp" alt="Paranoia"></td>
                         <td>15% increased number of Rare Monsters
 Players in Area are 12% Delirious</td>
                     </tr>
                     <tr>
-                        <td><img src="img/distilledenvy.webp" alt="Envy"></td>
+                        <td><img src="img/liquidenvy.webp" alt="Envy"></td>
                         <td>30% increased Waystones found in Area
 Players in Area are 15% Delirious</td>
                     </tr>
                     <tr>
-                        <td><img src="img/distilleddisgust.webp" alt="Disgust"></td>
+                        <td><img src="img/liquiddisgust.webp" alt="Disgust"></td>
                         <td>30% increased Precursor Tablets found in Area
 Players in Area are 18% Delirious</td>
                     </tr>
                     <tr>
-                        <td><img src="img/distilleddespair.webp" alt="Despair"></td>
+                        <td><img src="img/liquiddespair.webp" alt="Despair"></td>
                         <td>30% increased Stack size of Simulacrum Splinters found in Area
 Players in Area are 20% Delirious</td>
                     </tr>
                     <tr>
-                        <td><img src="img/distilledfear.webp" alt="Fear"></td>
+                        <td><img src="img/concentratedliquidfear.webp" alt="Fear"></td>
                         <td>Rare Monsters have a 25% chance to have an additional Modifier
 Players in Area are 22% Delirious</td>
                     </tr>
                     <tr>
-                        <td><img src="img/distilledsuffering.webp" alt="Suffering"></td>
+                        <td><img src="img/concentratedliquidsuffering.webp" alt="Suffering"></td>
                         <td>Unique Monsters have 1 additional Modifier
 Players in Area are 25% Delirious</td>
                     </tr>
                     <tr>
-                        <td><img src="img/distilledisolation.webp" alt="Isolation"></td>
+                        <td><img src="img/concentratedliquidisolation.webp" alt="Isolation"></td>
                         <td>Players in Area are 50% Delirious</td>
                     </tr>
                 </table>
@@ -518,7 +519,7 @@ Players in Area are 25% Delirious</td>
     </div>
 </body>
 <footer style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">
-    Info can be outdated. Last time data updated on PoE2 version 0.2.1
+    Info can be outdated. Last time data updated on PoE2 version 0.3.0
     <a href="https://github.com/625th/poe2-emotion" target="_blank" style="margin-left: 10px;">
         <img src="img/github-mark.png" 
              alt="GitHub Logo" 
